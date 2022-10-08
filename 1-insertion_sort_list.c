@@ -46,26 +46,32 @@ void swap_node(listint_t **list, listint_t *node, listint_t *previous)
 {
 	listint_t *next_node;
 
-	/* Make the node before and after the
+	/**
+	 * Make the node before and after the
 	 * two nodes point to the correct node
 	 * after they've been swapped.
 	 * (we are doing this before swapping
-	 * to avoid complexity) */
+	 * to avoid complexity)
+	 */
 	if (previous->prev != NULL)
 		previous->prev->next = node;
 	if (node->next != NULL)
 		node->next->prev = previous;
-	/* swap the pointers of the two nodes
+	/**
+	 * swap the pointers of the two nodes
 	 * so they point to the new proper node
-	 * in the list, i.e the `next` & `prev` pointer */
+	 * in the list, i.e the `next` & `prev` pointer
+	 */
 	next_node = node->next;
 	node->next = previous;
 	node->prev = previous->prev;
 	previous->next = next_node;
 	previous->prev = node;
 
-	/* if the node was swapped with the head node,
-	 * make the node the new head */
+	/**
+	 * if the node was swapped with the head node,
+	 * make the node the new head
+	 */
 	if (node->prev == NULL)
 	{
 		*list = node;
