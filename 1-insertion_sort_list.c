@@ -4,7 +4,7 @@
  * insertion_sort_list - Sorts a doubly linked list of integers
  * in ascending order using the Insertion sort algorithm
  *
- * @list: Doble pointer to the head of the list
+ * @list: Double pointer to the head of the lists 
  *
  */
 
